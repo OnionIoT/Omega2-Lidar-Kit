@@ -3,7 +3,7 @@
 START=61
 
 USE_PROCD=1
-BIN="/usr/bin/usr/bin/vhusbdmipsel"
+BIN="/usr/bin/vhusbdmipsel"
 OPT=""
 
 start_service() {
