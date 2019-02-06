@@ -17,11 +17,11 @@ def parseData (payload, payloadLen):
 
     angOffset = int.from_bytes(payload[1:3], byteorder='big', signed=True)
     angOffset = angOffset * 0.01
-    # print ('Angle Offset: %.2f˚'%angOffset)
+    # print ('Angle Offset: %.2f'%angOffset)
 
     angStart = int.from_bytes(payload[3:5], byteorder='big', signed=False)
     angStart = angStart * 0.01
-    # print ('Starting Angle: %.2f˚'%angStart)
+    # print ('Starting Angle: %.2f'%angStart)
 
     nSamples = int((payloadLen - 5) / 3)
     # print("N Samples: %d"%nSamples)
@@ -31,7 +31,7 @@ def parseData (payload, payloadLen):
         sampleID = payload[index]
         distance = int.from_bytes(payload[index+1:index+3], byteorder='big', signed=False)
         ang = angStart + 22.5*i/nSamples
-        print ('%.2f˚ : %.2f mm'%(ang, distance))
+        print ('%.2f: %.2f mm'%(ang, distance))
         pass
 
 def parseError (payload):
